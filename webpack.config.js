@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   mode: "production", // Change to "development" if needed
-  // devtool: "source-map",
+  devtool: "source-map",
   devtool: false,
   entry: "./src/remastered.js",
   output: {
@@ -27,7 +27,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /lightweight-charts\.standalone\.production\.js$/,
+        test: /lightweight-charts\.standalone\.production\.js$/, // tv lightweight charts bundling
         loader: 'exports-loader',
         options: {
           exports: {
