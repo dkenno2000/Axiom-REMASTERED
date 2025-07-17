@@ -1,0 +1,18 @@
+Axiom REMASTERED v0.1 – INSTALL INSTRUCTIONS
+
+🗂️ Unzip the File
+Extract the "Axiom-REMASTERED-v0.1" folder to a convenient location on your hard drive.
+
+🌐 Open the Chrome Extensions Page
+Go to chrome://extensions/ by typing it into the address bar.
+
+🛠️ Enable Developer Mode
+Toggle the Developer mode switch in the top-right corner to ON.
+
+📂 Load the Extension
+Click the "Load unpacked" button in the top-left corner.
+
+✅ Select the Extracted Folder
+Choose the unzipped "Axiom-REMASTERED-v0.1" folder and click "Select Folder".
+
+🚀 Happy Trading! 😉
