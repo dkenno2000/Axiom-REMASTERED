@@ -1,7 +1,7 @@
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg.type === 'parse-html') {
     fetchHtml(msg.url).then(sendResponse);
-    return true;
+    return true; // don't delete this
   }
 });
 
@@ -19,9 +19,9 @@ async function fetchHtml(url) {
     const doc = parser.parseFromString(html, 'text/html');
     
     // Try multiple description meta tags
-    const metaTag = doc.querySelector('meta[name="description"]') || 
-                   doc.querySelector('meta[property="og:description"]');
-    
+    const metaTag = doc.querySelector('meta[name="description"]') || doc.querySelector('meta[property="og:description"]');
+
+    // Debugging code, delete after checking...
     if (!metaTag) {
       return {
         success: false,
