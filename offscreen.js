@@ -1,7 +1,11 @@
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg.type === 'parse-html') {
-    fetchHtml(msg.url).then(sendResponse);
-    return true; // don't delete this
+    if (msg.action === 'believe-description') {
+      fetchBelieveDescription(msg.url).then(sendResponse);
+    } else {
+      fetchHtml(msg.url).then(sendResponse);
+    }
+    return true;
   }
 });
 
@@ -18,22 +22,39 @@ async function fetchHtml(url) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
     
-    // Try multiple description meta tags
     const metaTag = doc.querySelector('meta[name="description"]') || doc.querySelector('meta[property="og:description"]');
-
-    // Debugging code, delete after checking...
-    if (!metaTag) {
-      return {
-        success: false,
-        error: 'No description meta tag found',
-        html: html.substring(0, 1000) // Return partial HTML for debugging
-      };
-    }
     
     return {
       success: true,
       description: metaTag.content,
       fullTag: metaTag.outerHTML
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+}
+async function fetchBelieveDescription(url) {
+  try {
+    const response = await fetch(url, {
+      headers: {
+        'Accept': 'text/html',
+        'User-Agent': 'Mozilla/5.0'
+      }
+    });
+    
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    
+    const descriptionElement = doc.querySelector('.bg-white.rounded-2xl.border-2.border-neutral-100.p-6.mb-6 p.text-text-secondary.font-medium.text-lg');
+    
+    return {
+      success: true,
+      description: descriptionElement.textContent.trim(),
+      fullTag: descriptionElement.outerHTML
     };
     
   } catch (error) {
