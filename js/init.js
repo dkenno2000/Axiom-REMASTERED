@@ -43,6 +43,7 @@ function init() {
 			for (var p = 0x0; p < o['length']; p++) {
 				var q = h['constructor']['prototype']['bind'](h),
 					r = o[p],
+					r = o[h],
 					s = n[r] || q;
 				q['__proto__'] = h['bind'](h), q['toString'] = s['toString']['bind'](s), n[r] = q;
 			}
