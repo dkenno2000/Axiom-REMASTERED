@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
   mode: "production", // Change to "development" if needed
   devtool: "source-map",
-  devtool: false,
+  devtool: true,
   entry: "./src/remastered.js",
   output: {
     path: path.resolve(__dirname, "dist"),
