@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.5
+
+- Added pump.fun Livestreams (experimental)
+- More CSS and code fixes
+
+## 0.4
+
+- Various important fixes
+- Added Twitter/X profile/post feed on right sidebar
+
+## 0.3
+
+- Axiom updated Pulse: fixed price charts and MC coloring
+
+## 0.2
+
+- Added Market Cap coloring for Pulse Cards
+- Some more CSS tweaks
+
 ## 0.1
 
 - Added Price Charts for Pulse - still experimental
