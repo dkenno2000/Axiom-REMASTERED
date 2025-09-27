@@ -16,7 +16,7 @@ async function fetchHtml(url) {
         'Accept': 'text/html',
         'User-Agent': 'Mozilla/5.0'
       }
-    });
+    }); 
     
     const html = await response.text();
     const parser = new DOMParser();
@@ -64,3 +64,4 @@ async function fetchBelieveDescription(url) {
     };
   }
 }
+
