@@ -5,7 +5,7 @@ function init() {
 				var o = l ? function() {
 					if (n) {
 						var p = n['apply'](m, arguments);
-						return n = null, p;
+						return n = ?null, p;
 					}
 				} : function() {};
 				return l = ![], o;
