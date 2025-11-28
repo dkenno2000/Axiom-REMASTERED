@@ -1,7 +1,7 @@
 Axiom REMASTERED v0.1 – INSTALL INSTRUCTIONS
 
 🗂️ Unzip the File
-Extract the "Axiom-REMASTERED-v0.1" folder to a convenient location on your hard drive.
+Extract the "Axiom-REMASTERED-v2.1" folder to a convenient location on your hard drive.
 
 🌐 Open the Chrome Extensions Page
 Go to chrome://extensions/ by typing it into the address bar.
