@@ -1,0 +1,239 @@
+:root {
+  --bg: #1e1c21;
+  --panel: #22242D;
+  --muted: #9aa4b2;
+  --accent: #3dd6b6;
+  --glass: rgba(255, 255, 255, 0.025);
+  --card-radius: 10px;
+  --popup-width: 360px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #e6eef8;
+}
+
+.popup {
+  width: var(--popup-width);
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: var(--card-radius);
+  background: rgba(80,120,160,0.22);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  filter: contrast(1.2);
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.section {
+  margin-top: 7px;
+  background: var(--panel);
+  border-radius: var(--card-radius);
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: filter 0.25s ease;
+}
+
+.section:hover {
+    filter: brightness(1.08);
+}
+
+.section h3 {
+  margin: 0 0 2px 0;
+  font-size: 11.5px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 2px;
+}
+
+.row.column {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.desc {
+  font-size: 11px;
+  color: #e6eef8;
+}
+
+.muted {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.muted-div {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.toggle {
+  --w: 36px;
+  --h: 18px;
+  width: var(--w);
+  height: var(--h);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  position: relative;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.toggle:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.toggle[aria-checked="true"] {
+  background: linear-gradient(90deg, rgba(82, 197, 255, 0.55), rgba(161, 214, 182, 0.1));
+  box-shadow: 0 0 4px rgba(61, 214, 182, 0.06);
+}
+
+.knob {
+  position: absolute;
+  top: 0px;
+  left: -2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(0);
+  transition: transform 0.18s;
+}
+
+.toggle[aria-checked="true"] .knob {
+  transform: translateX(20px);
+}
+
+.radio-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.radio {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+}
+
+.radio:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.radio.active {
+  background: rgba(82, 197, 255, 0.35);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0px 10px rgba(2, 6, 23, 0.6);
+}
+
+#rem-xca-bsc-svg,
+#rem-xca-sol-svg {
+  width: 28px;
+  height: 28px;
+  margin-top: 6px;
+  margin-right: 6px;
+  margin-left: 6px;
+}
+
+.coinlinker {
+  display:flex;
+  width: 100%;
+  align-items: center;
+  padding: 2px;
+  padding-bottom: 8px;
+  border-radius: 8px;
+}
+
+.coinlinker.bsc {
+  outline: 1px solid #d8b50044;
+  background: rgba(216, 181, 0, 0.005);
+}
+
+.coinlinker.sol {
+  outline: 1px solid #c380ed44;
+  background: rgba(195, 128, 237, 0.005);
+}
+
+.footer {
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: justify;
+  color: var(--muted);
+  font-size: 12px;
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer:hover {
+    filter: brightness(1.08);
+}
