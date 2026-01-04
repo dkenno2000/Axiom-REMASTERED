@@ -39,10 +39,7 @@ async function fetchHtml(url) {
 async function fetchBelieveDescription(url) {
   try {
     const response = await fetch(url, {
-      headers: {
-        'Accept': 'text/html',
-        'User-Agent': 'Mozilla/5.0'
-      }
+      headers: { 'Accept': 'text/html', 'User-Agent': 'Mozilla/5.0' }
     });
     
     const html = await response.text();
@@ -64,4 +61,5 @@ async function fetchBelieveDescription(url) {
     };
   }
 }
+
 
