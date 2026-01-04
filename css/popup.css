@@ -221,6 +221,7 @@ html, body {
 .coinlinker.sol {
   outline: 1px solid #c380ed44;
   background: rgba(195, 128, 237, 0.005);
+  display: inherit;
 }
 
 .footer {
@@ -237,3 +238,4 @@ html, body {
 .footer:hover {
     filter: brightness(1.08);
 }
+
