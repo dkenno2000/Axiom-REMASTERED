@@ -37,7 +37,7 @@ function init() {
 					}
 					return u;
 				},
-				m = l(),
+				//m = l(), 
 				n = m['console'] = m['console'] || {},
 				o = ['log', 'warn', 'info', 'error', 'exception', 'table', 'trace'];
 			for (var p = 0x0; p < o['length']; p++) {
