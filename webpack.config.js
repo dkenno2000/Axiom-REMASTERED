@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   mode: "production", // Change to "development" if needed
-  devtool: "source-map",
+  devtool: "source-map", // recheck...
   devtool: true,
   entry: "./src/remastered.js",
   output: {
@@ -44,5 +44,6 @@ module.exports = {
     }
   }
 };
+
 
 
