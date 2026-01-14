@@ -104,6 +104,7 @@ html, body {
 .row.column {
   flex-direction: column;
   align-items: flex-start;
+  display: inherit;
 }
 
 .text {
@@ -140,6 +141,7 @@ html, body {
   padding: 0;
   outline: none;
   transition: background 0.2s;
+  display: inherit !important;
 }
 
 .toggle:hover {
@@ -210,19 +212,7 @@ html, body {
   align-items: center;
   padding: 2px;
   padding-bottom: 8px;
-  border-radius: 8px;
-}
-
-.coinlinker.bsc {
-  outline: 1px solid #d8b50044;
-  background: rgba(216, 181, 0, 0.005);
-}
-
-.coinlinker.sol {
-  outline: 1px solid #c380ed44;
-  background: rgba(195, 128, 237, 0.005);
-  display: inherit;
-}
+  border-radius: 8px; }
 
 .footer {
   margin-top: 8px;
@@ -238,4 +228,5 @@ html, body {
 .footer:hover {
     filter: brightness(1.08);
 }
+
 
