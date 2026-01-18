@@ -11,7 +11,12 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 
 async function fetchHtml(url) {
   try {
-    const response = await fetch(url, { headers: { 'Accept': 'text/html', 'User-Agent': 'Mozilla/5.0' } }); 
+    const response = await fetch(url, {
+      headers: {
+        'Accept': 'text/html',
+        'User-Agent': 'Mozilla/5.0'
+      }
+    });
     
     const html = await response.text();
     const parser = new DOMParser();
@@ -24,6 +29,7 @@ async function fetchHtml(url) {
       description: metaTag.content,
       fullTag: metaTag.outerHTML
     };
+    
   } catch (error) {
     return {
       success: false,
@@ -31,10 +37,14 @@ async function fetchHtml(url) {
     };
   }
 }
+
 async function fetchBelieveDescription(url) {
   try {
     const response = await fetch(url, {
-      headers: { 'Accept': 'text/html', 'User-Agent': 'Mozilla/5.0' }
+      headers: {
+        'Accept': 'text/html',
+        'User-Agent': 'Mozilla/5.0'
+      }
     });
     
     const html = await response.text();
@@ -42,19 +52,45 @@ async function fetchBelieveDescription(url) {
     const doc = parser.parseFromString(html, 'text/html');
     
     const descriptionElement = doc.querySelector('.bg-white.rounded-2xl.border-2.border-neutral-100.p-6.mb-6 p.text-text-secondary.font-medium.text-lg');
-    
+
     return {
-      success: true,
-      description: descriptionElement.textContent.trim(),
-      fullTag: descriptionElement.outerHTML
+      success: !!descriptionElement,
+      description: descriptionElement ? descriptionElement.textContent.trim() : null,
+      fullTag: descriptionElement ? descriptionElement.outerHTML : null
     };
     
   } catch (error) {
     return {
-      success: false, error: error.message
+      success: false,
+      error: error.message
     };
   }
 }
 
+async function fetchMoonitDescription(url) {
+  try {
+    const response = await fetch(url, {
+      headers: {
+        'Accept': 'text/html',
+        'User-Agent': 'Mozilla/5.0'
+      }
+    });
+    
+    const html = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    
+    const descriptionElement = doc.querySelector('[data-sentry-element="MemeCardTitle"] .mi-line-clamp-2.mi-h-\[40px\].mi-text-sm.mi-text-border');
 
-
+    return {
+      success: !!descriptionElement,
+      description: descriptionElement ? descriptionElement.textContent.trim() : null,
+      fullTag: descriptionElement ? descriptionElement.outerHTML : null
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+}
