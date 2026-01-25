@@ -1,4 +1,38 @@
-# Changelog
+# Changelog (i don't update this list regularly)
+
+## 2.0
+
+- Added highlighting of possible "fake" holder wallets (if age < 14 = orange or < 25 days = red)
+- Added flagging dev wallet with red color if dev's wallet is < 10 days
+- BSC support for charts
+- Added BSC token descriptions and automatic translation from Chinese to English
+- New versions: added new repos for Gmgn REMASTERED and Padre REMASTERED (experimental, still working on this)
+- Gmgn/Padre users report to me if anything breaks
+
+## 1.7
+
+- fixes.
+
+## 1.6
+
+- Updated livestreams code again (fuck you pumpfun)
+- Various other fixes
+- Added more APIs to fetch OHLC data/charts
+
+## 1.5 
+
+- Fixed a ton of bugs
+- pumpfun livestreams should be working again now (hopefully for more than a week)
+
+## 1.0
+
+- Rewritten almost the entire content script code to make it easier to port to gmgn and padre.
+Probably a few bugs left
+- Will apply fixes as bugs and errors occur...
+
+## 0.6
+
+- fixed market cap colors
 
 ## 0.5
 
