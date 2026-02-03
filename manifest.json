@@ -1,1 +1,35 @@
-{"name":"Axiom REMASTERED","description":"Extends Axiom.trade with advanced features. Built by d.kenno2000@gmail.com for serious memecoin traders.","version":"2.5","manifest_version":3,"icons":{"128":"img\/remastered-logo.png"},"action":{"default_icon":{"128":"img\/remastered-logo.png","16":"img\/remastered-logo.png","48":"img\/remastered-logo.png"},"default_popup":"html\/popup.html"},"background":{"service_worker":"dist\/axiom-service.js","type":"module"},"host_permissions":["*:\/\/*.axiom.trade\/*","*:\/\/*.pump.fun\/*","*:\/\/*.raydium.io\/*","*:\/\/*.bags.fm\/*","*:\/\/*.dquery.ai\/*","*:\/\/*.dexscreener.com\/*","*:\/\/*.mevx.io\/*","*:\/\/*.four.meme\/*","*:\/\/*.ape.pro\/*","*:\/\/*.sintral.io\/*","*:\/\/*.tinyastro.io\/*","*:\/\/*.coin-checker.xyz\/*","*:\/\/*.nitter.net\/*","*:\/\/*.blazingworld.me\/*","*:\/\/*.jup.ag\/*","*:\/\/*.launchonsoar.com\/*","*:\/\/*.padre.gg\/*","*:\/\/*.debot.ai\/*"],"permissions":["tabs","storage","offscreen","scripting","webRequest","debugger","activeTab"],"content_scripts":[{"run_at":"document_idle","matches":["*:\/\/*.axiom.trade\/*"],"js":["\/lib\/livekit.bundle.js","src\/axiom-rem.js"],"css":["css\/axiom-rem-core.css"],"all_frames":false}],"web_accessible_resources":[{"resources":["offscreen.html","img\/*.jpg","img\/*.png","*.js"],"matches":["*:\/\/*.axiom.trade\/*"]}]}
+{
+  "name": "Axiom REMASTERED",
+  "description": "Extends Axiom.trade with advanced features. Built by d.kenno2000@gmail.com for serious memecoin traders.",
+  "version": "2.1",
+  "manifest_version": 3,
+  "icons": {
+    "128": "img/remastered-logo.png"
+  },
+  "action": {
+    "default_icon": { "128": "img/remastered-logo.png", "16": "img/remastered-logo.png", "48": "img/remastered-logo.png" },
+    "default_popup": "html/popup.html"
+  },
+  "background": {
+    "service_worker": "dist/axiom-service.js",
+    "type": "module" 
+  },
+  "host_permissions": [ "*://*.axiom.trade/*", "*://*.pump.fun/*", "*://*.raydium.io/*", "*://*.bags.fm/*", "*://*.dquery.ai/*", "*://*.dexscreener.com/*", "*://*.mevx.io/*", "*://*.four.meme/*", "*://*.ape.pro/*", "*://*.sintral.io/*", "*://*.tinyastro.io/*", "*://*.coin-checker.xyz/*", "*://*.nitter.net/*", "*://*.blazingworld.me/*", "*://*.jup.ag/*", "*://*.launchonsoar.com/*", "*://*.padre.gg/*", "*://*.debot.ai/*"
+],
+  "permissions": [ "tabs", "storage", "offscreen", "scripting", "webRequest", "activeTab" ],
+  "content_scripts": [
+    {
+      "run_at": "document_idle",
+      "matches": ["*://*.axiom.trade/*"],
+      "js": ["/lib/livekit.bundle.js", "src/axiom-rem.js"],
+      "css": ["css/axiom-rem-core.css"],
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["offscreen.html", "img/*.jpg", "img/*.png", "*.js" ],
+      "matches": ["*://*.axiom.trade/*"]
+    }
+  ]
+}
