@@ -5,9 +5,9 @@
   <p align="center">
     <img src="https://raw.githubusercontent.com/dkenno2000/Axiom-REMASTERED/refs/heads/main/releases/ax1.jpg" width="98%">
     <br><br>
-    <img src="https://raw.githubusercontent.com/dkenno2000/Axiom-REMASTERED/refs/heads/main/releases/ax2.jpg" width="47%">
+    <img src="https://raw.githubusercontent.com/dkenno2000/Axiom-REMASTERED/refs/heads/main/releases/ax2.jpg" width="46%">
     <span>&nbsp;&nbsp;</span>
-    <img src="https://raw.githubusercontent.com/dkenno2000/Axiom-REMASTERED/refs/heads/main/releases/ax3.jpg" width="47%">
+    <img src="https://raw.githubusercontent.com/dkenno2000/Axiom-REMASTERED/refs/heads/main/releases/ax3.jpg" width="46%">
 </p>
 
 This extension is built for serious memecoin traders on the [Axiom](https://axiom.trade/) platform. It adds advanced features and quality of life improvements that help you trade faster and safer. The goal is simple: get all relevant information directly on Axiom.trade without opening extra tabs, so you never miss anything.
