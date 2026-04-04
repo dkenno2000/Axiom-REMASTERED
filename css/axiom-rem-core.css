@@ -2,6 +2,14 @@
 /*              MY SHIT             */
 /************************************/
 
+/* logo */
+@media (min-width: 640px) {
+.sm\:w-\[24px\]
+  {
+    overflow: hidden;
+  }
+}
+
 /* COIN PAGE SIDEBAR */
 
 /* sidebar fix old 
