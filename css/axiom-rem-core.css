@@ -1,6 +1,10 @@
-/************************************/
-/*              MY SHIT             */
-/************************************/
+button.rounded-full {
+  border-radius: 8px !important;
+}
+
+.group button.group\/quickBuyButton {
+  border-radius: 6px !important;
+}
 
 /* logo */
 @media (min-width: 640px) {
@@ -10,40 +14,52 @@
   }
 }
 
-/* COIN PAGE SIDEBAR */
-
-/* sidebar fix old 
-.h-\[calc\(100vh\+360px\)\].flex.flex-col.w-\[320px\].max-w-\[320px\].min-w-\[320px\].overflow-hidden.\[\&\:\:-webkit-scrollbar\]\:hidden.\[-ms-overflow-style\:none\].\[scrollbar-width\:none\] {
-    aoverflow-y: auto !important;
-    aheight: auto !important;
-}*/
-
-/* sidebar fix */
-.h-\[calc\(100vh\+360px\)\].flex.flex-col.w-\[320px\].max-w-\[320px\].min-w-\[320px\].overflow-hidden.\[\&\:\:-webkit-scrollbar\]\:hidden.\[-ms-overflow-style\:none\].\[scrollbar-width\:none\] {
-  height: fit-content !important;
+div>:has(>a[href="/discover?chain=sol"]):has(svg) .flex.flex-row.items-center::before {
+  max-width: 126px;
 }
 
-/* chart iframe container 
-.flex.flex-col.flex-1.min-w-0.h-\[calc\(100vh\+360px\)\].border-primaryStroke.border-r > .flex.flex-col.flex-1.min-h-\[0px\] {
-  min-height: 560px !important;
-}*/
 
-/* holders tab container 
-.flex.flex-col.w-full.min-w-0 > div > .flex.flex-1.min-w-0 > .flex.flex-col.overflow-auto.flex-1 {
-  min-height: 2470px !important;
-}*/
+
+/* TOAST ALERTS */
+[data-rht-toaster] button.cursor-pointer:has(span) {
+  width: 72px;
+  height: 36px;
+}
+
+[data-rht-toaster] .animate-enter {
+  height: 52px !important;
+}
+
+
+
+/* WATCHLIST PRICE CHART */
+.hidden.sm\:block .grayscale-\[30\%\] {
+  background: var(--background) !important;
+}
+
+#rem-watchlist-container:hover {
+  filter: brightness(1.16) !important;
+  border: 1px solid rgb(var(--secondary-stroke) / 35%) !important;
+}
+
+
 
 /******** PULSE ********/
 
 /* pulse tracker button spacing (New, Stretch, Migrated) */
 .flex.flex-col.overflow-hidden.bg-backgroundSecondary:not(:has([data-live-trades-content="true"])) >
 .relative.bg-backgroundSecondary.cursor-move > .flex.flex-row.h-full > button {
-    padding-right: 32px;
+  padding-right: 32px;
+}
+
+/* pump v1 span */
+.pointer-events-none.fixed.z-\[99999\].translate-x-\[-50\%\].translate-y-\[-100\%\] {
+  z-index: 2222;
 }
 
 /* hide token button */
 button.absolute.z-50.opacity-0.group-hover\:opacity-100:has(.ri-eye-off-line) {
-  scale: 1.4;
+  scale: 1.5;
 }
 
 /* blacklist dev button */
@@ -51,10 +67,73 @@ button.absolute.z-50.opacity-0.group-hover\:opacity-100:has(.icon-chefhat-off) {
   display: none;
 }
 
+/* blacklist twitter profile button */
+div[style*="height"] > div[style*="position: absolute"] button:has(.icon-at-off-line) {
+  display: none;
+}
+
+/* no scrollbar */
+.flex.h-full .relative.flex.w-full.flex-1 > .absolute.inset-0.overflow-y-auto {
+  scrollbar-width: none;
+}
+
+
+
+
+/* PULSE TWITTER PREVIEW */
+
+div[style*="height"] > div[style*="position: absolute"] .ri-quill-pen-line,
+div[style*="height"] > div[style*="position: absolute"] .ri-user-line,
+div[style*="height"] > div[style*="position: absolute"] .ri-group-3-line {
+  position: relative;
+}
+
+div[style*="height"] > div[style*="position: absolute"] .ri-quill-pen-line::after,
+div[style*="height"] > div[style*="position: absolute"] .ri-user-line::after,
+div[style*="height"] > div[style*="position: absolute"] .ri-group-3-line::after {
+  content: "";
+  position: absolute;
+  left: -80px;
+  right: -12px;
+  bottom: -80px;
+  top: 27px;
+  height: 300%;
+}
+
+div[style*="height"] > div[style*="position: absolute"] [class^="icon"],
+div[style*="height"] > div[style*="position: absolute"] [class^="ri-"],
+div[style*="height"] > div[style*="position: absolute"] :has( > a) {
+  z-index: 2 !important;
+}
+
+div[style*="height"] > div[style*="position: absolute"]
+div.hidden.sm\:flex.lg\:hidden:has(.h-\[24px\]) {
+  pointer-events: none !important;
+}
+
+/* twitter preview modal */
+.pointer-events-auto.fixed.z-\[9999\] {
+  margin-top: 1.35%;
+  margin-bottom: 0.6%;
+  margin-left: 2.85%;
+  scale: 0.95;
+  .relative.overflow-y-auto {
+    width: 380px;
+  }
+}
+
+
+
+
 /******** WALLET TRACKER ********/
 
 .flex.flex-col.overflow-hidden.bg-backgroundSecondary:has([data-live-trades-content="true"]) {
     width: 300px !important;
+}
+
+/* wallet tracker sidebar scrollbar */
+.flex.h-full.w-full.overflow-y-auto {
+    scrollbar-width: none;
 }
 
 /* wallet tracker sidebar wallets */
@@ -102,192 +181,327 @@ button.absolute.z-50.opacity-0.group-hover\:opacity-100:has(.icon-chefhat-off) {
     display: none;
 }
 
+
+
+
 /******** HOLDERS CONTAINER ********/
-
-/* chart iframe container
-.flex.flex-col.flex-1.min-w-0.h-\[calc\(100vh\+360px\)\].border-primaryStroke.border-r > .flex.flex-col.flex-1.min-h-\[0px\] {
-  min-height: 555px !important;
-}*/
-
-/* holders tab container 
-.flex.flex-col.w-full.min-w-0 > div > .flex.flex-1.min-w-0 > .flex.flex-col.overflow-auto.flex-1 {
-  min-height: 2470px !important;
-}*/
-
-/* holders tab bubblemaps 
-.relative.hidden.sm\:flex.flex-1.border-primaryStroke.border-l-0.min-h-\[0px\].transition-all.duration-0:has(iframe) {
-    height: 420px !important;
-    iframe {
-        margin-top: -2px;
-    }
-}*/
-
-/******** TERMINAL ********/
-
-/* right side coin CA */
-.h-\[calc\(100vh\+360px\)\].flex.flex-col.w-\[320px\].max-w-\[320px\].min-w-\[320px\].overflow-hidden .flex.flex-col.gap-\[16px\].w-full > .border.border-primaryStroke\/70:first-child {
-  display: none;        
-}
 
 /* holders wallets list */
 .flex.flex-col.w-full.min-w-0 > .flex.flex-row.w-full.flex-1.min-h-0.min-w-0.overflow-hidden .flex.flex-1.overflow-auto.min-h-0
-div[style*="position: absolute"]:hover  {
-    background: rgb(var(--primary-color) / 0.04 );
+div[style*="position: absolute"]:hover {
+  background: rgb(var(--primary-color) / 0.05) !important;
 }
 
 /* dev wallet row under holders */
-div[style*="position: absolute"]:has([alt="Developer"]),
-div[style*="position: absolute"]:has([alt="Developer"]):hover {
+div[style*="position: absolute"]:has(img[alt="Developer"]),
+div[style*="position: absolute"]:has(img[alt="Developer"]):hover {
     background: rgb(var(--primary-yellow) / var(--tw-text-opacity, 0.06)) !important;
 }
 
-/* emoji picker
-.z-\[200\] .fixed.inset-0.bg-\[\#090909\]\/40.flex.items-center.justify-center.z-\[100\] > div {
-  width: 550px;
-  height: 620px;
+
+
+/*********** BUBBLE MAPS** *********/
+
+.flex-1.flex-col > .flex.h-full.w-full > iframe {
+  height: 350px;
 }
 
-.z-\[200\] .fixed.inset-0.bg-\[\#090909\]\/40.flex.items-center.justify-center.z-\[100\] aside {
-    width: 516px !important;
-    height: 564px !important;
+
+
+/************* SIDEBAR *************/
+
+/* sidebar height fix */
+.h-\[calc\(100vh\+360px\)\].w-\[320px\] {
+  height: fit-content !important;
+}
+
+/* coin stats 5m/1h/6h/24h */
+/*.h-\[calc\(100vh\+360px\)\].w-\[320px\] > .relative.flex.min-h-\[64px\] {
+  display: none;
 }*/
 
-/* right siderbar PnL text */
-.relative > .flex.sm\:hidden.flex-col.flex-1.w-full.min-h-0.h-full .border-b.border-primaryStroke > .flex.flex-row.flex-1
-.flex.flex-col.flex-1.gap-\[4px\].flex:last-child {
-  flex: 2;
-  min-width: 130px; 
+/* coin stats 5m/1h/6h/24h wide chart */
+.flex.flex-1.flex-col > .relative.flex.flex-row > .hidden.flex-col {
+  display: none;
 }
+
+/* token info gaps */
+.h-\[calc\(100vh\+360px\)\].w-\[320px\] > .flex > .flex.flex-col.flex-1,
+.w-\[320px\].min-w-\[320px\].max-w-\[320px\] > .flex .flex-col > .flex.min-h-\[0px\] {
+  gap: 4px;
+}
+
+/* token info stats */
+.h-\[calc\(100vh\+360px\)\].w-\[320px\] .flex.h-\[55px\].w-full.flex-col.items-center,
+.w-\[320px\].min-w-\[320px\].max-w-\[320px\] .flex.h-\[55px\].w-full.flex-col.items-center {
+  gap: 6px !important;
+  height: 52px;
+}
+
+/* dev, top 10, insiders, bundlers, global fees highlighting */
+.rem-highlight-red {
+  outline: 1px solid rgba(var(--primary-red) / 0.15) !important;
+  border: 1px solid rgba(var(--primary-red) / 0.35) !important;
+  background: rgba(var(--primary-red) / 0.125) !important;
+  box-shadow: 0px 0px 8px 1px rgba(var(--primary-red) / 0.085);
+  border-radius: 4px;
+  transition: background 0.3s ease, border 0.3s ease;
+  .text-textPrimary.text-\[14px\]
+    {
+        color: rgba(var(--primary-red) / 1);
+    }
+}
+
+/* token info padding */
+.h-\[calc\(100vh\+360px\)\].w-\[320px\] .flex.flex-col > .flex.flex-col.gap-\[16px\],
+.w-\[320px\].min-w-\[320px\].max-w-\[320px\] .flex.flex-col > .flex.flex-col.gap-\[16px\]  {
+    padding-bottom: 4px;
+}
+
+/* right side coin CA */
+.h-\[calc\(100vh\+360px\)\].w-\[320px\] .flex.flex-col.gap-\[16px\].w-full > .border.border-primaryStroke\/70:first-child,
+.w-\[320px\].min-w-\[320px\].max-w-\[320px\] .flex.flex-col.gap-\[16px\].w-full > .border.border-primaryStroke\/70:first-child {
+  display: none;
+}
+
+/* right side dev ca */
+.h-\[calc\(100vh\+360px\)\].w-\[320px\] .duration-125.flex.h-\[32px\].w-full.flex-row.items-center.justify-start,
+.w-\[320px\].min-w-\[320px\].max-w-\[320px\] .duration-125.flex.h-\[32px\].w-full.flex-row.items-center.justify-start {
+  margin-top: 6px;
+  height: 32px;
+  .text-\[14px\], .text-\[12px\] {
+    font-size: 11px !important;
+  }
+}
+
+/* right side dev wallet */
+.h-\[calc\(100vh\+360px\)\].w-\[320px\] .flex.w-full.flex-col.items-start > .mb-\[8px\] .text-\[14px\],
+.h-\[calc\(100vh\+360px\)\].w-\[320px\] .flex.w-full.flex-col.items-start > .mb-\[8px\] .text-\[12px\],
+.w-\[320px\].min-w-\[320px\].max-w-\[320px\] .flex.w-full.flex-col.items-start > .mb-\[8px\] .text-\[14px\],
+.w-\[320px\].min-w-\[320px\].max-w-\[320px\] .flex.w-full.flex-col.items-start > .mb-\[8px\] .text-\[12px\] {
+  font-size: 11px !important;
+}
+
 
 
 /*******************************************/
 /**************** REMASTERED ***************/
 /*******************************************/
 
-button.rounded-full {
-    border-radius: 8px !important;
+/**************** TOKEN HEADER *************/
+
+/* token image mouse hover on meme page */
+.group.relative.h-\[36px\].w-\[36px\] {
+  /*pointer-events: none !important;*/
+
+  /* hide token button */
+  button:has(.ri-eye-off-line) {
+      pointer-events: auto !important;
+      scale: 1.5;
+    }
+
+  /* blacklist twitter profile button */
+  button:has(.icon-at-off-line) {
+      display: none;
+    }
 }
 
-.group button.group\/quickBuyButton {
-  border-radius: 6px !important;
-}
+/* token image mouse hover on meme page -> twitter preview */
+/*#pair-name-tooltip .ri-quill-pen-line::after,
+#pair-name-tooltip .ri-user-line::after,
+#pair-name-tooltip .ri-group-3-line::after {
+  content: "";
+  position: absolute;
+  width: 56px;
+  left: 4px;
+  top: -2px;
+  height: 62px;
+  z-index: 21;
+}*/
 
-.toggle-keyboard-shortcuts button:focus-visible {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* token info gaps */
-.h-\[calc\(100vh\+360px\)\].flex.flex-col.w-\[320px\].max-w-\[320px\].min-w-\[320px\] >
-.flex.flex-col.border-primaryStroke .flex.flex-col.flex-1 {
-  gap: 4px;
-}
-
-/***************** QUICK BUY ***************/
-
-/* right sidebar mobile instant trade container */
-.h-\[calc\(100vh\+360px\)\].flex.flex-col.overflow-hidden > .relative > .flex.sm\:hidden  {
-  display: flex;
-  .flex.flex-col.flex-1.w-full.min-h-0.h-full {
-    padding-bottom: 2px;
-  }
-}
-
-.h-\[calc\(100vh\+360px\)\].flex.flex-col.overflow-hidden > .relative > .flex.sm\:hidden 
-.flex.flex-col.border-b-0.border-primaryStroke {
+/* share token button  */
+.contents > button:has(>.ri-share-line) {
   display: none;
 }
 
-.rem-quick-buy-container {
-    border-radius: 12px;
-    border: 1px solid transparent;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    contain: content;
+/* megaphone lobby */
+/*.relative.flex.max-h-\[64px\]:has(#pair-name-tooltip) button:has(i.ri-megaphone-line) {
+  display: none !important;
+}*/
+
+/* set price alert */
+.relative.flex.max-h-\[64px\]:has(#pair-name-tooltip) button:has(i.ri-alarm-add-line) {
+  display: none !important;
 }
 
-.rem-quick-buy-container .rem-keys-enabled {
-    border: 1px solid rgb(var(--primary-color) / var(--tw-text-opacity, 0.66));
-    background: rgb(var(--primary-color) / var(--tw-text-opacity, 0.035));
+
+
+
+/*************** MEME CONTAINER ************/
+
+/* collapse sidebar button  */
+#rem-meme-collapse-btn {
+  transition: color 0.2s ease !important;
+  color: #aaa !important;
+  margin-right: -4px;
+}
+
+#rem-meme-collapse-btn:hover {
+  color: #fff !important;
+}
+
+#meme-info-container {
+  min-width: 2px !important;
+  transition: min-width .075s ease, width .075s ease;
+  transition-delay: 0.35s !important;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+}
+
+#meme-info-container:hover {
+  min-width: 321px !important;
+  transition: min-width 0.05s ease !important;
+  transition-delay: 0.2s !important;
+}
+
+.rem-inline-twitter {
+  padding: 6px !important;
+  width: 289px !important;
+}
+
+#rem-ticker {
+  margin-top: -6px;
+}
+
+/* sidebar twitter */
+.rem-tw-quote {
+  background: #16223066;
+  transition: background .15s ease;
+}
+
+.rem-tw-quote:hover {
+  background: #18263588;
+}
+
+/* skeleton animation  */
+@keyframes rem-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.rem-skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: rem-shimmer 1.5s infinite linear;
+  pointer-events: none;
+}
+
+
+
+
+/***************** QUICK BUY ***************/
+
+/* right sidebar mobile quick buy container & PnL widget */
+.h-\[calc\(100vh\+360px\)\].w-\[320px\] .relative > .flex.h-full.sm\:hidden {
+  display: flex;
+  margin-bottom: -16px;
+  > .flex.h-full > .flex.flex-col {
+      display: none;
+    }
+}
+
+/* quick buy container */
+.rem-quick-buy-container {
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  contain: content;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+/* Base styles when enabled based on modes */
+.rem-quick-buy-container.rem-keys-enabled.mode-buy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  border-radius: 12px;
+  border: 1px solid rgb(var(--increase) / 0.45);
+  background: rgb(var(--increase) / 0.015);
+}
+
+.rem-quick-buy-container.rem-keys-enabled.mode-sell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  border-radius: 12px;
+  border: 1px solid rgb(var(--decrease) / 0.45);
+  background: rgb(var(--decrease) / 0.015);
 } 
 
-/* quick buy buttons */
-.rem-quick-buy-buttons button.rem-btn {
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 14px;
-    border-width: 1px;
-    flex: 1 1 0%;
-    height: 44px;
-    cursor: pointer;
+/* quick buy/sell buttons */
+.rem-quick-buy-buttons button.rem-btn,
+.rem-quick-sell-buttons button.rem-btn {
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  border-width: 1px;
+  flex: 1 1 0%;
+  height: 44px;
+  cursor: pointer;
+  transition: background 0.05s ease, color 0.05s ease, border-color 0.05s ease;
 }
 
+/* disabled state */
 .rem-keys-disabled .rem-quick-buy-buttons button.rem-btn {
-  transition: background 0.1s ease;
   color: rgb(var(--increase) / 1);
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  border-color: rgb(var(--increase) / .5);
+  border-color: rgb(var(--increase) / 0.5);
 }
 
 .rem-keys-disabled .rem-quick-buy-buttons button.rem-btn:hover {
-    background: rgb(var(--increase) / .25) !important;
-}
-
-.rem-keys-enabled .rem-quick-buy-buttons.active button.rem-btn {
-  color: rgb(var(--increase) / 1);
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  border-color: rgb(var(--increase) / .5);
-  background: rgb(var(--increase) / .075);
-}
-
-.rem-keys-enabled .rem-quick-buy-buttons:not(.active) button.rem-btn {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  color: rgb(var(--increase) / .5);
-  border-color: rgb(var(--increase) / .25);
-}
-
-/* quick sell buttons */
-.rem-quick-sell-buttons button.rem-btn {
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 14px;
-    border-width: 1px;
-    flex: 1 1 0%;
-    height: 44px;
-    cursor: pointer;
+  background: rgb(var(--increase) / 0.1) !important;
 }
 
 .rem-keys-disabled .rem-quick-sell-buttons button.rem-btn {
-  transition: background 0.1s ease;
   color: rgb(var(--decrease) / 1);
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  border-color: rgb(var(--decrease) / .5);
+  border-color: rgb(var(--decrease) / 0.5);
 }
 
 .rem-keys-disabled .rem-quick-sell-buttons button.rem-btn:hover {
-    background: rgb(var(--decrease) / .25) !important;
+  background: rgb(var(--decrease) / 0.1) !important;
+}
+
+/* enabled state */
+.rem-keys-enabled .rem-quick-buy-buttons.active button.rem-btn {
+  color: rgb(var(--increase) / 1);
+  border-color: rgb(var(--increase) / 0.5);
+  background: rgb(var(--increase) / 0.1);
+}
+
+.rem-keys-enabled .rem-quick-buy-buttons:not(.active) button.rem-btn {
+  color: rgb(var(--increase) / 0.25);
+  border-color: rgb(var(--increase) / 0.25);
 }
 
 .rem-keys-enabled .rem-quick-sell-buttons.active button.rem-btn {
   color: rgb(var(--decrease) / 1);
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  border-color: rgb(var(--decrease) / .5);
-  background: rgb(var(--decrease) / .075);
+  border-color: rgb(var(--decrease) / 0.5);
+  background: rgb(var(--decrease) / 0.1);
 }
 
 .rem-keys-enabled .rem-quick-sell-buttons:not(.active) button.rem-btn {
-  transition: background 0.1s ease;
-    
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  color: rgb(var(--decrease) / .5);
-  border-color: rgb(var(--decrease) / .25);
+  color: rgb(var(--decrease) / 0.25);
+  border-color: rgb(var(--decrease) / 0.25);
 }
+
+
+
 
 /**************** PnL MIRROR ***************/
 
@@ -296,11 +510,14 @@ button.rounded-full {
 }
 
 #rem-mirrored-pnl-percentage span {
-  font-size: 14.85px;
-  margin-right: 12px;
+  font-size: 14px;
+  margin-right: 10px;
 }
 
 #rem-mirrored-pnl-percentage svg { margin-right: 6px; }
+
+
+
 
 /************* PULSE CLONE MENU ************/
 
@@ -310,12 +527,12 @@ button.rounded-full {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border-radius: 8px !important;
+  border-radius: 50% !important;
   height: 32px; 
   width: 32px;
   align-self: center;
   transition: background 0.2s ease;
-  margin-left: 0 !important;
+  margin-left: 8px !important;
 }
 
 #rem-menu.disabled {
@@ -331,16 +548,26 @@ button.rounded-full {
 #rem-menu .rem-dropdown {
   position: absolute;
   right: 0;
-  top: calc(100% + 6px);
-  z-index: 50;
-  min-width: 220px;
+  top: 100%;
+  padding-top: 6px;
+  z-index: -9999;
+  min-width: 250px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transform-origin: top right;
-  transform: translateY(-6px) scale(0.98);
-  transition: opacity 180ms ease, transform 180ms ease, visibility 0s linear 200ms;
-  transition-delay: 0.5s;
+  transform: translateY(-4px) scale(0.98);
+  transition: opacity 150ms ease, transform 150ms ease, visibility 0s linear 300ms; 
+}
+
+#rem-menu .rem-dropdown::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 12px; 
+  background: transparent;
 }
 
 #rem-menu.rem-open .rem-dropdown {
@@ -348,14 +575,17 @@ button.rounded-full {
   visibility: visible;
   pointer-events: auto;
   transform: translateY(0) scale(1);
-  transition-delay: 0s;
+  transition-delay: 0.4s;
+  z-index: 9999;
 }
 
 #rem-menu .rem-dropdown-inner {
-  padding: 10px;
+  padding: 6px;
+  background: #121212; /* Fallback */
   background: rgba(var(--background-tertiary));
+  border: 1px solid rgba(var(--primary-stroke), 0.5);
   border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(20, 20, 25, 0.66);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
 }
 
 #rem-menu .rem-dropdown button,
@@ -364,20 +594,23 @@ button.rounded-full {
   pointer-events: auto;
 }
 
-.rem-pulse-clone-menu-enabled #platform-layout > div {
+.rem-pulse-clone-menu-enabled #platform-layout > div:first-child {
   overflow: visible !important;
 }
 
-.rem-pulse-clone-menu-enabled .flex.flex-1.flex-row.min-h-0.overflow-hidden.relative >  .flex.flex-1.min-h-0.overflow-auto >  .flex.flex-col.w-full.h-full {
+.rem-pulse-clone-menu-enabled #platform-layout-container > .flex.h-full.w-full > .flex.w-full.flex-none {
+  display: none;
+}
+
+.rem-pulse-clone-menu-enabled #platform-layout-container > .flex.h-full.w-full {
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.rem-pulse-clone-menu-enabled .flex.flex-1.flex-row.min-h-0.overflow-hidden.relative >  .flex.flex-1.min-h-0.overflow-auto >  .flex.flex-col.w-full.h-full >  .flex-none.flex.flex-row.w-full {
-  display: none;
-}
+
+
 
 /**************** PUMP IMAGE ***************/
 
@@ -423,7 +656,8 @@ button.rounded-full {
 
 #rem-pump-image {
     filter: saturate(0.75);
-    transition: filter 0.25s ease;
+    transition: filter 0.2s ease;
+    cursor: pointer;
 }
 
 #rem-pump-image:hover {
@@ -465,109 +699,163 @@ button.rounded-full {
 
 .rem-img-desc-cont .rem-text {
   line-height: 1.45 !important;
-  font-size: 12px !important;
+  font-size: 12.2px !important;
   color: rgb(var(--text-tertiary) / var(--tw-text-opacity, 1)) !important;
   display: block;
 }
 
-.rem-desc-flow { margin-top: 4px; }
+.rem-desc-flow {
+  margin-top: 10px !important;
+  /*border-bottom: 1px solid rgba(91, 96, 117, 0.15);*/
+  padding-bottom: 10px;
+}
 
 #rem-quick-search i {
     color: rgb(var(--text-tertiary) / var(--tw-text-opacity, 1));
 }
 
+
+
+
 /*************** INSTANT TRADE **************/
 
-/* instant trade size */
-#instant-trade.bg-backgroundTertiary {
-    min-height: 310px !important;
+.fixed.left-0.top-0.z-50:has(#instant-trade) {
+  position: absolute !important;
+}
+
+#instant-trade {
+  border-radius: 6px;
+  opacity: 0.45;
+  transition: opacity .7s ease .25s, filter .7s ease .25s !important;
+  transition-delay: .25s !important;
+  filter: saturate(1.35) !important;
+}
+
+#instant-trade:hover {
+  opacity: 1;
+  filter: saturate(1) !important;
+  transition-delay: 0s !important;
+  transition: opacity 0.05s ease !important;
+}
+
+.relative.z-50:has(#instant-trade) {
+  backdrop-filter: blur(3px) !important;
+  filter: saturate(0.8);
+}
+
+/* instant trade limit sell button */
+#rem-limit-sell-btn {
+  min-width: 46px;
+  padding-left: 2px;
+  flex-direction: column;
+}
+
+/* instant trade limit sell buttons */
+#rem-limit-sell-btn-exec, #rem-limit-sell-btn-close {
+  height: 28px;
+}
+
+/* instant trade stop loss percentage */
+#rem-limit-pct-display {
+  width: 21px;
+  font-size: 9px;
 }
 
 /* instant trade */
 #instant-trade .bg-backgroundTertiary.cursor-move {
-  height: 40px;
+  height: 38px;
   button {
-    padding: 3.75px !important;
+    padding: 1.5px !important;
     span, i {
-      font-size: 12.8px;
+      font-size: 12.5px;
     }
   }
-}
-
-/* buy/sell headers */
-#instant-trade .buy-click-container > div.flex.flex-col:nth-child(1) .flex.items-center.justify-between span,
-#instant-trade .buy-click-container > .flex.flex-col.w-full > div:nth-child(2) .flex.items-center.justify-between span {
-  font-size: 12.75px;
 }
 
 /* instant trade buy & sell buttons */
 #instant-trade .cursor-pointer.border-increase\/50.text-increase.touch-callout-none,
 #instant-trade .cursor-pointer.border.border-decrease\/50.text-decrease.touch-callout-none {
-    height: 40px;
-    border-radius: 8px;
+    height: 52px;
+    border-radius: 6px;
 }
 
-/* slippage, fees text */
-#instant-trade .buy-click-container > div > .flex.flex-row.justify-between.items-center span,
-#instant-trade .buy-click-container > .flex.flex-row.justify-between.items-center span {
-    font-size: 11px;
+#instant-trade span {
+  font-size: 10px !important;
 }
 
-/* PnL font size */
-#instant-trade {
-  border-radius: 6px;
-  .border-t .text-\[12px\] {
-    scale: 1.06;
-  }
+/* bottom row Pnl text size */
+#instant-trade .flex.h-\[32px\].cursor-pointer .text-\[12px\],
+#instant-trade .flex.h-\[32px\].cursor-pointer .text-\[12px\] span {
+  font-size: 13px !important;
 }
+
+
+
+
+/************** FEES PROGRESS BAR *************/
+
+/* coin card fees progress bar */
+.rem-fee-steps-container {
+  bottom: -60px !important;
+  right: -10px !important;
+  width: 21px !important;
+  border-radius: 0px !important;
+  height: 4px !important;
+  transform: scaleX(-1);
+  z-index: 50 !important;
+  gap: 3px !important;
+}
+
+.rem-fee-steps-container > .bg-pump {
+  border-radius: 0px !important;
+  background: rgb(var(--primary-green));
+  opacity: 0.85 !important;
+}
+
+.rem-fee-steps-container > .bg-secondaryStroke\/50 {
+  background: none !important;
+}
+
+
+
 
 /**************** PRICE CHARTS ***************/
 
-/* QUICK BUY BUTTONS */
-/*.flex.flex-1.w-full div[style*="position: absolute"]:has(.rem-price-chart) .absolute.z-20:has(button.group\/quickBuyButton) { display: none !important; }
-.flex.flex-1.w-full div[style*="position: absolute"]:has(.rem-price-chart):hover .absolute.z-20:has(button.group\/quickBuyButton) { display: block !important; }
-.flex.flex-1.w-full div[style*="position: absolute"]:hover .rem-price-chart { display: none !important; }*/
-
 /* HIDE QUICK BUY BUTTON */
-.flex.flex-1.w-full div[style*="position: absolute"] .absolute.z-20:has(button.group\/quickBuyButton) { display: none !important; }
-.flex.flex-1.w-full div[style*="position: absolute"]:hover .absolute.z-20:has(button.group\/quickBuyButton) { display: none !important; }
+.flex.flex-1.w-full div[style*="position: absolute"] .absolute:has(button.group\/quickBuyButton) { opacity: 0 !important; pointer-events: none !important; }
+/*.flex.flex-1.w-full div[style*="position: absolute"]:hover .absolute:has(button.group\/quickBuyButton) { opacity: 1 !important; }
+.flex.flex-1.w-full div[style*="position: absolute"] .absolute .border:has(.h-full.w-full) { opacity: 0 !important; }
+.flex.flex-1.w-full div[style*="position: absolute"]:hover .absolute .border:has(.h-full.w-full) { opacity: 1 !important; }
+.flex.flex-1.w-full div[style*="position: absolute"]:hover .rem-price-chart { z-index: 9999; visibility: hidden; }*/
 
-/* pulse tracker quick buy button */
-.flex.flex-col.overflow-hidden.bg-backgroundSecondary:has(.sticky.top-0.z-30.w-full) button.group\/quickBuyButton {
-    display: none;
-}
-
-.rem-price-chart {
-  background-color: none !important;
+.rem-price-chart,
+.rem-live-price-chart {
+  background-color: transparent !important;
   background: none !important;
   position: absolute;
-  height: 50% !important;
-  width: 180px;
-  right: 1%;
-  bottom: 2%;
+  right: 1.5%;
+  bottom: 2px;
   font-size: 6px;
   justify-content: flex-end;
   display: flex;
   z-index: 50;
   overflow: hidden;
-  opacity: 1;
-  transition: opacity 0.25s ease;
+  visibility: visible;
   pointer-events: none;
   contain: strict layout paint size style;
   will-change: transform;
 }
 
 /* migrating coins */
-.flex.flex-1.w-full div[style*="position: absolute"] .before\:bg-gradient-to-r .rem-price-chart {
+.flex.flex-1.w-full div[style*="position: absolute"] .before\:bg-gradient-to-r .rem-price-chart,
+.flex.flex-1.w-full div[style*="position: absolute"] .before\:bg-gradient-to-r .rem-live-price-chart
+{
   opacity: 0.2;
   z-index: -999;
 }
 
-.rem-price-chart .tv-lightweight-charts canvas[style*="z-index: 2"] {
-  opacity: 0;
-  pointer-events: none;
-  display: none;
-}
+
+
 
 /************* MARKET CAP COLORS ************/
 
@@ -576,76 +864,92 @@ button.rounded-full {
     background: none !important;
 }
 
-div[class*="rem-mc"] {
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
+@property --rem-mc-pct {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 100%;
 }
 
-div[class*="rem-mc"]::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 1;
+@property --rem-mc-color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: transparent;
 }
 
-.rem-mc-1::after { background: linear-gradient(to right, #00000000 90%, rgba(var(--primary-light-blue) / 0.12)); }
-.rem-mc-2::after { background: linear-gradient(to right, #00000000 85%, rgba(var(--primary-light-blue) / 0.14)); }
-.rem-mc-3::after { background: linear-gradient(to right, #00000000 80%, rgba(var(--primary-light-blue) / 0.16)); }
-.rem-mc-4::after { background: linear-gradient(to right, #00000000 75%, rgba(var(--primary-light-blue) / 0.18)); }
-.rem-mc-5::after { background: linear-gradient(to right, #00000000 70%, rgba(var(--primary-light-blue) / 0.20)); }
+.rem-mc-animated {
+  background: linear-gradient(to right, #00000000 var(--rem-mc-pct), var(--rem-mc-color));
+  transition: --rem-mc-pct 0.13s ease-out, --rem-mc-color 0.13s ease-out;
+}
 
-.rem-mc-6::after { background: linear-gradient(to right, #00000000 85%, rgba(var(--primary-yellow) / 0.12)); }
-.rem-mc-7::after { background: linear-gradient(to right, #00000000 77%, rgba(var(--primary-yellow) / 0.14)); }
-.rem-mc-8::after { background: linear-gradient(to right, #00000000 69%, rgba(var(--primary-yellow) / 0.16)); }
-.rem-mc-9::after { background: linear-gradient(to right, #00000000 60%, rgba(var(--primary-yellow) / 0.18)); }
-.rem-mc-10::after { background: linear-gradient(to right, #00000000 55%, rgba(var(--primary-yellow) / 0.20)); }
 
-.rem-mc-11::after { background: linear-gradient(to right, #00000000 82%, rgba(var(--primary-green) / 0.12)); }
-.rem-mc-12::after { background: linear-gradient(to right, #00000000 78%, rgba(var(--primary-green) / 0.14)); }
-.rem-mc-13::after { background: linear-gradient(to right, #00000000 70%, rgba(var(--primary-green) / 0.16)); }
-.rem-mc-14::after { background: linear-gradient(to right, #00000000 62%, rgba(var(--primary-green) / 0.18)); }
-.rem-mc-15::after { background: linear-gradient(to right, #00000000 55%, rgba(var(--primary-green) / 0.20)); }
-
-.rem-mc-16::after { background: linear-gradient(to right, #00000000 52%, rgba(var(--primary-green) / 0.22)); }
 
 
 /****************** HOLDERS *****************/
 
 /* WALLET AGE */
-.rem-age-red {
-  color: rgb(var(--primary-red) / var(--tw-text-opacity, 1)) !important;
+div[style*="position: absolute"]:not(:has(.ri-water-flash-line.text-blue-500))
+.rem-age-wrapper {
+  position: relative;
+  isolation: isolate;
 }
 
-.rem-age-orange {
-  color: rgb(var(--primary-orange) / var(--tw-text-opacity, 1)) !important;
+div[style*="position: absolute"]:not(:has(.ri-water-flash-line.text-blue-500))
+.rem-age-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  height: 18px;
+  left: 16px;
+  width: 55%;
+  aright: 40px;
+  border-radius: 4px; 
+  z-index: -1;
+  pointer-events: none;
 }
 
-.rem-age-yellow {
-  color: rgb(var(--primary-yellow) / var(--tw-text-opacity, 1)) !important;
+div[style*="position: absolute"]:not(:has(.ri-water-flash-line.text-blue-500))
+.rem-age-red::before {
+  background-color: rgb(var(--primary-red) / 0.27);
+}
+
+div[style*="position: absolute"]:not(:has(.ri-water-flash-line.text-blue-500))
+.rem-age-yellow::before {
+  background-color: rgb(var(--primary-yellow) / 0.24);
 }
 
 /* BALANCE GRADIENTS */
-.rem-balance-1, .rem-balance-2, .rem-balance-3, .rem-balance-4, .rem-balance-5 {
+.rem-balance-0, .rem-balance-1, .rem-balance-2, .rem-balance-3, .rem-balance-4, .rem-balance-5 {
   position: relative;
 }
 
 /* PERCENTAGE GRADIENTS  */
-.rem-percentage-1, .rem-percentage-2, .rem-percentage-3, .rem-percentage-4, .rem-percentage-5 {
+.rem-percentage-0, .rem-percentage-1, .rem-percentage-2, .rem-percentage-3, .rem-percentage-4, .rem-percentage-5 {
   position: relative;
   overflow: visible !important;
 }
 
-.rem-percentage-1::before {
+.rem-percentage-0::before, .rem-balance-0::before {
   content: "";
   position: absolute;
   background: linear-gradient(
     to right,
-    transparent -100px,
-    rgba(82,197,255,0.15) 15%,
-    transparent calc(100% - 85%)
+    transparent -120px,
+    rgba(82,197,255,0.1) 2%,
+    transparent calc(100% - 98%)
+  );
+  margin-top: -16px;
+  height: 48px;
+  inset: 0;
+}
+
+.rem-percentage-1::before, .rem-balance-1::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    transparent -120px,
+    rgba(82,197,255,0.125) 10%,
+    transparent calc(100% - 90%)
   );
   margin-top: -16px;
   height: 48px;
@@ -657,9 +961,9 @@ div[class*="rem-mc"]::after {
   position: absolute;
   background: linear-gradient(
     to right,
-    transparent -100px,
-    rgba(82,197,255,0.15) 25%,
-    transparent calc(100% - 75%)
+    transparent -120px,
+    rgba(82,197,255,0.2) 20%,
+    transparent calc(100% - 80%)
   );
   margin-top: -16px;
   height: 48px;
@@ -671,9 +975,9 @@ div[class*="rem-mc"]::after {
   position: absolute;
   background: linear-gradient(
     to right,
-    transparent -100px,
-    rgba(82,197,255,0.20) 47%,
-    transparent calc(100% - 53%)
+    transparent -120px,
+    rgba(82,197,255,0.2) 35%,
+    transparent calc(100% - 65%)
   );
   margin-top: -16px;
   height: 48px;
@@ -685,9 +989,9 @@ div[class*="rem-mc"]::after {
   position: absolute;
   background: linear-gradient(
     to right,
-    transparent -100px,
-    rgba(82,197,255,0.25) 70%,
-    transparent calc(100% - 30%)
+    transparent -120px,
+    rgba(82,197,255,0.2) 60%,
+    transparent calc(100% - 40%)
   );
   margin-top: -16px;
   height: 48px;
@@ -699,9 +1003,23 @@ div[class*="rem-mc"]::after {
   position: absolute;
   background: linear-gradient(
     to right,
+    transparent -120px,
+    rgba(82,197,255,0.3) 97%,
+    transparent calc(100% - 3%)
+  );
+  margin-top: -16px;
+  height: 48px;
+  inset: 0;
+}
+
+div[style*="position: absolute"]:has([alt="Developer"]) .rem-percentage-0::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(
+    to right,
     transparent -100px,
-    rgba(82,197,255,0.30) 98%,
-    transparent calc(100% - 2%)
+    rgba(255,255,100,0.1) 2%,
+    transparent calc(100% - 99%)
   );
   margin-top: -16px;
   height: 48px;
@@ -714,7 +1032,7 @@ div[style*="position: absolute"]:has([alt="Developer"]) .rem-percentage-1::befor
   background: linear-gradient(
     to right,
     transparent -100px,
-    rgba(255,255,100,0.25) 15%,
+    rgba(255,255,100,0.15) 15%,
     transparent calc(100% - 85%)
   );
   margin-top: -16px;
@@ -728,7 +1046,7 @@ div[style*="position: absolute"]:has([alt="Developer"]) .rem-percentage-2::befor
   background: linear-gradient(
     to right,
     transparent -100px,
-    rgba(255,255,100,0.25) 25%,
+    rgba(255,255,100,0.2) 25%,
     transparent calc(100% - 75%)
   );
   margin-top: -16px;
@@ -756,7 +1074,7 @@ div[style*="position: absolute"]:has([alt="Developer"]) .rem-percentage-4::befor
   background: linear-gradient(
     to right,
     transparent -100px,
-    rgba(255,255,100,0.25) 70%,
+    rgba(255,255,100,0.3) 70%,
     transparent calc(100% - 30%)
   );
   margin-top: -16px;
@@ -770,7 +1088,7 @@ div[style*="position: absolute"]:has([alt="Developer"]) .rem-percentage-5::befor
   background: linear-gradient(
     to right,
     transparent -100px,
-    rgba(255,255,100,0.25) 98%,
+    rgba(255,255,100,0.45) 98%,
     transparent calc(100% - 2%)
   );
   margin-top: -16px;
@@ -778,31 +1096,32 @@ div[style*="position: absolute"]:has([alt="Developer"]) .rem-percentage-5::befor
   inset: 0;
 }
 
-.bg-transparent:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-1::before,
-.bg-transparent:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-2::before,
-.bg-transparent:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-3::before,
-.bg-transparent:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-4::before,
-.bg-transparent:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-5::before,
-.bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-1::before,
-.bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-2::before,
-.bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-3::before,
-.bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-4::before,
-.bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-5::before {
-    background: none !important;
+div[style*="position: absolute"] .bg-transparent:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-1::before,
+div[style*="position: absolute"] .bg-transparent:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-2::before,
+div[style*="position: absolute"] .bg-transparent:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-3::before,
+div[style*="position: absolute"] .bg-transparent:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-4::before,
+div[style*="position: absolute"] .bg-transparent:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-5::before,
+div[style*="position: absolute"] .bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-1::before,
+div[style*="position: absolute"] .bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-2::before,
+div[style*="position: absolute"] .bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-3::before,
+div[style*="position: absolute"] .bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-4::before,
+div[style*="position: absolute"] .bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) .rem-percentage-5::before {
+  background: none !important;
 }
 
 /* holders percentage progress bar */
-.flex.flex-col.flex-1.justify-center.items-start.gap-2 > .mb-1.bg-primaryStroke\/50.rounded-full.overflow-hidden {
-    display: none;
+div[style*="position: absolute"] .flex.flex-col.flex-1.justify-center.items-start.gap-2 > .mb-1.bg-primaryStroke\/50.rounded-full.overflow-hidden {
+  display: none;
 }
 
 /* liquidity pool under holders */
-.bg-transparent:has(i.ri-water-flash-line.text-blue-500) > .flex span, .bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) > .flex span {
+div[style*="position: absolute"]:has(i.ri-water-flash-line.text-blue-500) * {
   color: rgb(59 130 246/var(--tw-text-opacity,1)) !important;
-  opacity: 0.95;
+  background: none !important;
 }
 
-.bg-transparent:has(i.ri-water-flash-line.text-blue-500), .bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) {
+div[style*="position: absolute"] .bg-transparent:has(i.ri-water-flash-line.text-blue-500),
+div[style*="position: absolute"] .bg-primaryStroke\/20:has(i.ri-water-flash-line.text-blue-500) {
   .rem-balance-1::before, .rem-balance-2::before, .rem-balance-3::before,
   .rem-balance-4::before, .rem-balance-5::before {
   background: none !important;
@@ -810,9 +1129,11 @@ div[style*="position: absolute"]:has([alt="Developer"]) .rem-percentage-5::befor
 }
 
 /* holders pro trader icons */
-.bg-transparent [alt="Pro User"], .bg-primaryStroke\/20 [alt="Pro User"] {
+div[style*="position: absolute"] .bg-transparent [alt="Pro User"], .bg-primaryStroke\/20 [alt="Pro User"] {
   filter: invert(10%) sepia(90%) saturate(350%);
 }
+
+
 
 
 /**************** TWITTER FEED ***************/
@@ -924,6 +1245,9 @@ span.rem-x-title {
     border-left: none;
 }
 
+
+
+
 /************ TWITTER PULSE PREVIEW ***********/
 
 .remastered-x-pulse-feed-hoverable {
@@ -956,6 +1280,8 @@ span.rem-x-title {
   clip-path: inset(0px 0px 0px 4px);
   background: rgb(var(--background-tertiary)) !important;
 }
+
+
 
 
 /***************** LIVE STREAM ****************/
@@ -996,6 +1322,9 @@ span.rem-x-title {
 .pump-min-controls {
   z-index: 9999;
 }
+
+
+
 
 /*************** CHART MIRRORING **************/
 
@@ -1075,7 +1404,6 @@ span.rem-x-title {
     outline: 2px solid rgba(65,90,130,0.95);
     transition: transform .05s ease, filter .15s ease, box-shadow .15s ease;
     transform-origin: center bottom;
-    will-change: transform;
     z-index: 1;
 }
 
@@ -1084,6 +1412,7 @@ span.rem-x-title {
     filter: brightness(1.25);
     cursor: pointer;
     box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 1);
+    will-change: transform;
     z-index: 99999;
 }
 
