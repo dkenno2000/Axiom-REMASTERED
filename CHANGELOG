@@ -1,5 +1,8 @@
 # Changelog (i don't update this list regularly)
 
+## 2.0.1
+- Added chart support for printr platform
+
 ## 2.0
 
 - Added highlighting of possible "fake" holder wallets (if age < 14 = orange or < 25 days = red)
