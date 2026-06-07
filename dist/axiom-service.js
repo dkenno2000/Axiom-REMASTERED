@@ -933,6 +933,7 @@ const w = {
 	'mon-grad': ['bas_fetchFromBinance', 'bas_fetchFromDebot', 'bas_fetchFromMevX', 'bas_fetchFromPancake', 'bas_fetchFromPhoton'],
 	unknown: ['sol_fetchFromDebot', 'sol_fetchFromJupiter', 'sol_fetchFromPadre', 'bsc_fetchFromBinance', 'bsc_fetchFromDebot']
 };
+// todo: add printr
 const yt = {
 	sol_fetchFromApe: gt,
 	sol_fetchFromBinance: bt,
